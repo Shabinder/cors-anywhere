@@ -13,12 +13,12 @@
       },
       "CORSANYWHERE_ALLOWLIST": {
         "description": "Allow-list of domains; comma-separated.",
-        "value": "",
+        "value": "http://localhost",
         "required": false
       },
       "CORSANYWHERE_RATELIMIT": {
         "description": "If you run an open proxy, you will be violating Heroku terms. Rate-limiting can help mitigate this.",
-        "value": "",
+        "value": "1 1",
         "required": false
       },
       "NODE_ENV": "production",
