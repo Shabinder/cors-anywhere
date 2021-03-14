@@ -34,12 +34,13 @@ cors_proxy.createServer({
     'via',
     'connect-time',
     'total-route-time',
+    'referer',
     // Other Heroku added debug headers
     // 'x-forwarded-for',
     // 'x-forwarded-proto',
     // 'x-forwarded-port',
   ],
-  setHeaders: {'referer': 'https://music.youtube.com/search'},
+  setHeaders: {'Referer': 'https://music.youtube.com/search'},
   redirectSameOrigin: true,
   httpProxyOptions: {
     // Do not add X-Forwarded-For, etc. headers, because Heroku already adds it.
