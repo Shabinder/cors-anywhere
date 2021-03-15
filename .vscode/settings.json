@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/79fbdab4-51ac-47e0-b6f1-1f5e4fdff9e9/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/spotiflyer-cors",
+    "appService.deploySubpath": "."
+}
