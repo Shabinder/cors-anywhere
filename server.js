@@ -35,14 +35,16 @@ cors_proxy.createServer({
     'connect-time',
     'total-route-time',
     'save-data',
+    'user-agent',
     // Other Heroku added debug headers
     // 'x-forwarded-for',
     // 'x-forwarded-proto',
     // 'x-forwarded-port',
   ],
   setHeaders: {
-    'referer': 'https://music.youtube.com/search',
-    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:85.0) Gecko/20100101 Firefox/85.0',
+    'referer': 'https://music.youtube.com/search',//For YT MUSIC API
+    'origin': 'https://music.youtube.com/search',//For YT MUSIC API
+    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:85.0) Gecko/20100101 Firefox/85.0',//For Same Response on Mobile
   },
   redirectSameOrigin: true,
   httpProxyOptions: {
