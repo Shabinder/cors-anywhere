@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build App
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build App Docker image & push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+          registry: docker.pkg.github.com
+          repository: Shabinder/cors-anywhere
+          tag_with_ref: true
+          tag_with_sha: true
+          add_git_labels: true
+          tags: latest
