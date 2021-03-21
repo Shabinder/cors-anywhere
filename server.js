@@ -1,5 +1,5 @@
-process.on("SIGINT", () => {
-  console.info("\nReceived SIGINT. Terminating...");
+process.on('SIGINT', function () {
+  console.info('\nReceived SIGINT. Terminating...');
   process.exit(0);
 });
 
@@ -14,6 +14,7 @@ var port = process.env.PORT || 8080;
 // use originAllowList instead.
 var originBlockList = parseEnvList(process.env.CORSANYWHERE_BLOCKLIST);
 var originAllowList = parseEnvList(process.env.CORSANYWHERE_ALLOWLIST);
+
 function parseEnvList(env) {
   if (!env) {
     return [];
@@ -56,6 +57,6 @@ cors_proxy.createServer({
     // Do not add X-Forwarded-For, etc. headers, because Heroku already adds it.
     xfwd: false,
   },
-}).listen(port, host, function() {
+}).listen(port, host, function () {
   console.log('Running CORS Anywhere on ' + host + ':' + port);
 });
