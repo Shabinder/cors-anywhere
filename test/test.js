@@ -140,7 +140,7 @@ describe('Basic functionality', function() {
     request(cors_anywhere)
       .get('/http:/notenoughslashes')
       .expect('Access-Control-Allow-Origin', '*')
-      .expect(200, helpText, done);
+      .expect(404, done);
   });
 
 
