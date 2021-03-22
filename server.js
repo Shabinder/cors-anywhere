@@ -19,7 +19,9 @@ function parseEnvList(env) {
   if (!env) {
     return [];
   }
-  return env.split(',');
+  return env.split(',').filter(function (it) {
+    return it !== '';
+  });
 }
 
 // Set up rate-limiting to avoid abuse of the public CORS Anywhere server.
@@ -59,4 +61,7 @@ cors_proxy.createServer({
   },
 }).listen(port, host, function () {
   console.log('Running CORS Anywhere on ' + host + ':' + port);
+  console.log('Rate limit: ' + (process.env.CORSANYWHERE_RATELIMIT || 'unlimited'));
+  console.log('Allowing CORS from: [' + originAllowList + ']');
+  console.log('Blocking CORS from: [' + originBlockList + ']');
 });
