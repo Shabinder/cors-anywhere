@@ -10,7 +10,7 @@ RUN npm install
 FROM node:14-alpine
 WORKDIR /app
 COPY --from=builder /app /app
-ENV PORT=8080 CORSANYWHERE_ALLOWLIST="" CORSANYWHERE_RATELIMIT=""
+ENV HOST="0.0.0.0" PORT=8080 CORSANYWHERE_ALLOWLIST="" CORSANYWHERE_BLOCKLIST="" CORSANYWHERE_RATELIMIT=""
 EXPOSE $PORT
 
 # docker build -t cors-anywhere . && docker run cors-anywhere
